@@ -254,11 +254,11 @@
 <script>
 	var input = document.getElementById("input");
 	var result = document.getElementById("output");
-	input.value = "<head></head><body></body>";
+	input.value = "<html><head></head><body></body></html>";
 
 	function typing() {
 
-    result.contentDocument.documentElement.innerHTML = input.value;
+    result.contentDocument.documentElement = input.value;
 	}
 	function goToCourses(){
 		window.location.href = "http://appacademy.io/";
