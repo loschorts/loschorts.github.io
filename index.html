@@ -245,7 +245,7 @@
 			<textarea id="input" type="textarea" onkeyup="typing()"></textarea>
 		</section>
 		<section class="terminal">
-			<div id="output"></div>
+			<iframe id="output"></iframe>
 		</section>
 	</section>
 	<button onclick="goToCourses()">Need Help?</a>
@@ -254,10 +254,11 @@
 <script>
 	var input = document.getElementById("input");
 	var result = document.getElementById("output");
+	input.value = "<head></head><body></body>";
 
 	function typing() {
 
-    result.innerHTML = input.value;
+    result.contentDocument.documentElement.innerHTML = input.value;
 	}
 	function goToCourses(){
 		window.location.href = "http://appacademy.io/";
