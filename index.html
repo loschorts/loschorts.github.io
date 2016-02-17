@@ -113,10 +113,10 @@
 <script>
 	var input = document.getElementById("input");
 	var result = document.getElementById("output");
-	input.value = "<head>\n</head>\n\n<body>\n</body>";
+	input.value = "<html><head>\n</head>\n\n<body>\n</body></html>";
 
 	function typing() {
-    result.contentDocument.documentElement.innerHTML = input.value;
+    result.contentDocument.documentElement.outerHTML = input.value;
 	}
 	function goToCourses(){
 		window.location.href = "http://appacademy.io/apply";
