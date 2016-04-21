@@ -36,15 +36,13 @@ These actions should all rely on the UserApiUtil to make the actual request.
 Make sure to provide `success` and `error` callbacks to your queries. What do the error callbacks do?
 
 #### CurrentUserStateMixin
-Imagine a world in which multiple components all want to update themselves based on who is logged in. In that world, those components would have a [*cross-cutting concern*](https://facebook.github.io/react/docs/reusable-components.html#mixins), i.e. a need for a shared set of functionalities. 
+Say you have multiple components that will want to update themselves based on who is logged in. Those components have a *cross-cutting concern*, i.e. a need for a shared set of functionalities. 
 
-Well that world is here, and the way it works is with **Mixins**. We are going to create a CurrentUserStateMixin that can be added to any component that wants to keep track of the current user.
+The way it works in React is with [**Mixins**](https://facebook.github.io/react/docs/reusable-components.html#mixins). A mixin is simply an object full of functions that can be added to a component. It is analogous to a Ruby `module`; generically, we could call it a *namespace*. 
 
-A mixin is simply an object full of functions that can be added to a component. It is analogous to a Ruby `module`; generically, we could call it a *namespace*. 
+We are going to create a `CurrentUserStateMixin` that can be added to any component that wants to keep track of the current user.
 
-So let's start by creating a new file `frontend/mixins/current_user_state.js`. This file is going to export an object called `CurrentUserStateMixin`.
-
-Our `CurrentUserStateMixin` will have three functions:
+So let's start by creating a new file `frontend/mixins/current_user_state.js`. This file is going to export an object called `CurrentUserStateMixin`, which will have three functions:
   * ``getInitialState`: get the currentUser and authErrors from the UserStore and add them to `this.state`.
   * `componentDidMount`: 
     * Add a UserStore listener that will `updateUser`
