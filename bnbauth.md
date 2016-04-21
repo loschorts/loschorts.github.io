@@ -43,7 +43,7 @@ React deals with cross-cutting concerns by allowing [**Mixins**](https://faceboo
 We are going to create a `CurrentUserStateMixin` that can be added to any component that wants to keep track of the current user.
 
 So let's start by creating a new file `frontend/mixins/current_user_state.js`. This file is going to export an object called `CurrentUserStateMixin`, which will have three functions:
-  * ``getInitialState`: get the currentUser and authErrors from the UserStore and add them to `this.state`.
+  * `getInitialState`: get the currentUser and authErrors from the UserStore and add them to `this.state`.
   * `componentDidMount`: 
     * Add a UserStore listener that will `updateUser`
     * `fetchCurrentUser` if the `UserStore.currentUser` is undefined.
