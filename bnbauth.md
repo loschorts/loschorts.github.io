@@ -1,7 +1,7 @@
 ## Phase 7: Front End User Authentication
 In this phase, we are going to implement front-end user sign-up and login. Goodbye Rails views; hello, single-page app!
 
-### Build Your Backend.
+### 1. Build Your Backend.
 
 You should already know how to do this. Create a User Model, Users Controller, and Sessions Controller.
 
@@ -11,7 +11,7 @@ Follow the pattern you used during the [Rails curriculum](#), keeping in mind th
   * `Users#show` should return the `current_user` if she or he exists.
   * If any auth errors arise (e.g. 'invalid credentials' or 'username already exists'), return those errors in your response with a corresponding error status. 
 
-### Build Your Frontend.
+### 2. Build Your Frontend.
 Set up the following flux architecture components.
 ####UserStore
 UserStore should:
@@ -38,7 +38,7 @@ UserApiUtil should:
 
 Make sure to provide `success` and `error` callbacks to your queries. What do the error callbacks do?
 
-####CurrentUserStateMixin
+####3. CurrentUserStateMixin
 Imagine a world in which multiple components all want to update themselves based on who is logged in. In that world, those components would have a *cross-cutting concern*, i.e. a need for a shared set of functionality. 
 
 Well that world is here, and the way it works is with **Mixins**. We are going to create a CurrentUserStateMixin that can be added to any component that wants to keep track of the current user.
