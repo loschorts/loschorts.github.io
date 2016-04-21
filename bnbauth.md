@@ -36,7 +36,7 @@ These actions should all rely on the UserApiUtil to make the actual request.
 Make sure to provide `success` and `error` callbacks to your queries. What do the error callbacks do?
 
 #### CurrentUserStateMixin
-Say you have multiple components that will want to update themselves based on who is logged in. Those components have a *cross-cutting concern*, i.e. a need for shared functionality. 
+Say you have multiple components that will want to update themselves based on who is logged in. Those components have a *cross-cutting concern*, i.e. a shared need for certain functionality. 
 
 React deals with cross-cutting concerns with [**Mixins**](https://facebook.github.io/react/docs/reusable-components.html#mixins). A mixin is simply an object full of functions that can be added to a component. It is analogous to a Ruby `module`; generically, we could call it a *namespace*. 
 
