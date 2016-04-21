@@ -38,7 +38,7 @@ Make sure to provide `success` and `error` callbacks to your queries. What do th
 #### CurrentUserStateMixin
 Say you have multiple components that will want to update themselves based on who is logged in. Those components have a *cross-cutting concern*, i.e. a need for a shared set of functionalities. 
 
-The way it works in React is with [**Mixins**](https://facebook.github.io/react/docs/reusable-components.html#mixins). A mixin is simply an object full of functions that can be added to a component. It is analogous to a Ruby `module`; generically, we could call it a *namespace*. 
+React deals with cross-cutting concerns with [**Mixins**](https://facebook.github.io/react/docs/reusable-components.html#mixins). A mixin is simply an object full of functions that can be added to a component. It is analogous to a Ruby `module`; generically, we could call it a *namespace*. 
 
 We are going to create a `CurrentUserStateMixin` that can be added to any component that wants to keep track of the current user.
 
