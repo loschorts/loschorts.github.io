@@ -8,7 +8,7 @@ You should already know how to do this. Create a User Model, Users Controller, a
 Follow the pattern you used during the [Rails curriculum](#), keeping in mind the following: 
   * Your controllers should live under an `Api` namespace and return JSON formatted responses.
   * We only care about one user (the current user), so adjust your routes and controllers accordingly (i.e. you have a single user `resource`, not `resources`).
-  * `Users#Show` should return the `current_user` if she or he exists.
+  * `Users#show` should return the `current_user` if she or he exists.
   * If any auth errors arise (e.g. 'invalid credentials' or 'username already exists'), return those errors in your response with a corresponding error status. 
 
 ### Build Your Frontend.
