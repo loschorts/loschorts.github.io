@@ -6,17 +6,17 @@ In this phase, we are going to implement front-end user sign-up and login. Goodb
 You should already know how to do this. Create a User Model, Users Controller, and Sessions Controller.
 
 Follow the pattern you used during the [Rails curriculum](#), keeping in mind the following: 
-	* Your controllers should live under an `API` namespace and return JSON formatted responses.
-	* We only care about one user (the current user), so adjust your routes and controllers accordingly (i.e. you have a single user `resource`, not `resources`).
-	* `Users#Show` should return the `current_user` if she or he exists.
-	* If any auth errors arise (e.g. 'invalid credentials' or 'username already exists'), return those errors in your response with a corresponding error status. 
+  * Your controllers should live under an `API` namespace and return JSON formatted responses.
+  * We only care about one user (the current user), so adjust your routes and controllers accordingly (i.e. you have a single user `resource`, not `resources`).
+  * `Users#Show` should return the `current_user` if she or he exists.
+  * If any auth errors arise (e.g. 'invalid credentials' or 'username already exists'), return those errors in your response with a corresponding error status. 
 
 ### Build Your Frontend.
 Set up the following flux architecture components.
 ####UserStore
 UserStore should:
-	* Keep track of the `_currentUser`, if any. 
-	* Keep track of any `_authErrors`, if they arise.
+  * Keep track of the `_currentUser`, if any. 
+  * Keep track of any `_authErrors`, if they arise.
 
 ####UserActions 
 UserActions should:
