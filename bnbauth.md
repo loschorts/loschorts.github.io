@@ -14,12 +14,10 @@ Follow the pattern you used during the [Rails curriculum](#), keeping in mind th
 ### 2. Build Your Frontend.
 Set up the following flux architecture components.
 ####UserStore
-UserStore should:
   * Keep track of the `_currentUser`, if any. 
   * Keep track of any `_authErrors`, if they arise.
 
 ####UserActions 
-UserActions should:
   * `fetchCurrentUser`
   * `login` a user
   * `logout` a user if one is logged in
@@ -29,7 +27,6 @@ UserActions should:
 These actions should all rely on the UserApiUtil to make the actual request.
 
 ####UserApiUtil
-UserApiUtil should:
   * `fetchCurrentUser`
   * `login` a user
   * `logout` a user if one is logged in
