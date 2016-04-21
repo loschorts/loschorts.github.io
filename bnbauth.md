@@ -1,0 +1,69 @@
+## Phase 7: Front End User Authentication
+In this phase, we are going to implement front-end user sign-up and login. Goodbye Rails views; hello, single-page app!
+
+### Build Your Backend.
+
+You should already know how to do this. Create a User Model, Users Controller, and Sessions Controller.
+
+Follow the pattern you used during the [Rails curriculum](#), keeping in mind the following: 
+	* Your controllers should live under an `API` namespace and return JSON formatted responses.
+	* We only care about one user (the current user), so adjust your routes and controllers accordingly (i.e. you have a single user `resource`, not `resources`).
+	* `Users#Show` should return the `current_user` if she or he exists.
+	* If any auth errors arise (e.g. 'invalid credentials' or 'username already exists'), return those errors in your response with a corresponding error status. 
+
+### Build Your Frontend.
+Set up the following flux architecture components.
+####UserStore
+UserStore should:
+	* Keep track of the `_currentUser`, if any. 
+	* Keep track of any `_authErrors`, if they arise.
+
+####UserActions 
+UserActions should:
+	* `fetchCurrentUser`
+	* `login` a user
+	* `logout` a user if one is logged in
+	* `create` a user
+	* `destroy` a user account
+
+These actions should all rely on the UserApiUtil to make the actual request.
+
+####UserApiUtil
+UserApiUtil should:
+	* `fetchCurrentUser`
+	* `login` a user
+	* `logout` a user if one is logged in
+	* `create` a user
+	* `destroy` a user account
+
+Make sure to provide `success` and `error` callbacks to your queries. What do the error callbacks do?
+
+####CurrentUserStateMixin
+Imagine a world in which multiple components all want to update themselves based on who is logged in. In that world, those components would have a *cross-cutting concern*, i.e. a need for a shared set of functionality. 
+
+Well that world is here, and the way it works is with **Mixins**. We are going to create a CurrentUserStateMixin that can be added to any component that wants to keep track of the current user.
+
+A mixin is simply an object full of functions that can be added to a component. It is analogous to a Ruby `module`; generically, we could call it a *namespace*. 
+
+So let's start by creating a new file `frontend/mixins/current_user_state.js`. This file is going to export an object called `CurrentUserStateMixin`.
+
+Our `CurrentUserStateMixin` will have three functions:
+	* ``getInitialState`: get the currentUser and authErrors from the UserStore and add them to `this.state`.
+	* `componentDidMount`: 
+		* Add a UserStore listener that will `updateUser`
+		* `fetchCurrentUser` if the `UserStore.currentUser` is undefined.
+	* `updateUser`: update the state of currentUser and authErrors.
+
+We can add this mixin to any component by requiring it and adding it under the property `mixins` like so: 
+
+```
+var Component = React.createClass({
+		mixins: [CurrentUserStateMixin],
+		//other methods go here
+})
+```
+
+Now our `Component` has all the methods we wrote in `CurrentUserStateMixin` and we can easily sprinkle that functionality wherever else it's needed.
+
+Don't worry if you want to do other things at those life-cycle events (e.g., have more initial state). Write your component hooks as normal, and React will run both the mixin hook and your hook when the event triggers.
+
