@@ -38,7 +38,7 @@ UserApiUtil should:
 
 Make sure to provide `success` and `error` callbacks to your queries. What do the error callbacks do?
 
-####3. CurrentUserStateMixin
+#### CurrentUserStateMixin
 Imagine a world in which multiple components all want to update themselves based on who is logged in. In that world, those components would have a *cross-cutting concern*, i.e. a need for a shared set of functionality. 
 
 Well that world is here, and the way it works is with **Mixins**. We are going to create a CurrentUserStateMixin that can be added to any component that wants to keep track of the current user.
@@ -67,3 +67,5 @@ Now our `Component` has all the methods we wrote in `CurrentUserStateMixin` and 
 
 Don't worry if you want to do other things at those life-cycle events (e.g., have more initial state). Write your component hooks as normal, and React will run both the mixin hook and your hook when the event triggers.
 
+### 3. Create a NavBar
+Use your sprinkly-shiny mixin to create a NavBar component in your App that shows a login/signup form if nobody is logged in, and greets the user and gives them a logout button if they are logged in.
