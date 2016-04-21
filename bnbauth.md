@@ -20,21 +20,21 @@ UserStore should:
 
 ####UserActions 
 UserActions should:
-	* `fetchCurrentUser`
-	* `login` a user
-	* `logout` a user if one is logged in
-	* `create` a user
-	* `destroy` a user account
+  * `fetchCurrentUser`
+  * `login` a user
+  * `logout` a user if one is logged in
+  * `create` a user
+  * `destroy` a user account
 
 These actions should all rely on the UserApiUtil to make the actual request.
 
 ####UserApiUtil
 UserApiUtil should:
-	* `fetchCurrentUser`
-	* `login` a user
-	* `logout` a user if one is logged in
-	* `create` a user
-	* `destroy` a user account
+  * `fetchCurrentUser`
+  * `login` a user
+  * `logout` a user if one is logged in
+  * `create` a user
+  * `destroy` a user account
 
 Make sure to provide `success` and `error` callbacks to your queries. What do the error callbacks do?
 
@@ -48,11 +48,11 @@ A mixin is simply an object full of functions that can be added to a component. 
 So let's start by creating a new file `frontend/mixins/current_user_state.js`. This file is going to export an object called `CurrentUserStateMixin`.
 
 Our `CurrentUserStateMixin` will have three functions:
-	* ``getInitialState`: get the currentUser and authErrors from the UserStore and add them to `this.state`.
-	* `componentDidMount`: 
-		* Add a UserStore listener that will `updateUser`
-		* `fetchCurrentUser` if the `UserStore.currentUser` is undefined.
-	* `updateUser`: update the state of currentUser and authErrors.
+  * ``getInitialState`: get the currentUser and authErrors from the UserStore and add them to `this.state`.
+  * `componentDidMount`: 
+    * Add a UserStore listener that will `updateUser`
+    * `fetchCurrentUser` if the `UserStore.currentUser` is undefined.
+  * `updateUser`: update the state of currentUser and authErrors.
 
 We can add this mixin to any component by requiring it and adding it under the property `mixins` like so: 
 
