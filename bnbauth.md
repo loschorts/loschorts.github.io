@@ -68,4 +68,4 @@ Now our `Component` has all the methods we wrote in `CurrentUserStateMixin` and 
 Don't worry if you want to do other things at those life-cycle events (e.g., have more initial state). Write your component hooks as normal, and React will run both the mixin hook and your hook when the event triggers.
 
 ### 3. Create a NavBar
-Use your sprinkly-shiny mixin to create a NavBar component in your App that shows a login/signup form if nobody is logged in, and greets the user and gives them a logout button if they are logged in.
+Use your sprinkly-shiny mixin to create a NavBar component in your App that shows a login/signup form if nobody is logged in, and greets the user and gives them a logout button if they are logged in. Make sure to show errors if they screw up the forms!
