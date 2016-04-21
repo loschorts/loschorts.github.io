@@ -36,7 +36,7 @@ These actions should all rely on the UserApiUtil to make the actual request.
 Make sure to provide `success` and `error` callbacks to your queries. What do the error callbacks do?
 
 #### CurrentUserStateMixin
-Imagine a world in which multiple components all want to update themselves based on who is logged in. In that world, those components would have a *cross-cutting concern*, i.e. a need for a shared set of functionality. 
+Imagine a world in which multiple components all want to update themselves based on who is logged in. In that world, those components would have a [*cross-cutting concern*](https://facebook.github.io/react/docs/reusable-components.html#mixins), i.e. a need for a shared set of functionality. 
 
 Well that world is here, and the way it works is with **Mixins**. We are going to create a CurrentUserStateMixin that can be added to any component that wants to keep track of the current user.
 
