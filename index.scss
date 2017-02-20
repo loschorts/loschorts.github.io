@@ -18,11 +18,6 @@ body {
 
 /*image holder related styles*/
 
-.box.image {
-	padding: 0;
-	overflow: hidden;
-}
-
 img.fill {
 	width: 100%;
 	height: 100%;
@@ -86,6 +81,11 @@ h2 {
 .tall.box {
 	flex: 2;
 }	
+
+.image.box {
+	padding: 0;
+	overflow: hidden;
+}
 
 /* striping */
 
